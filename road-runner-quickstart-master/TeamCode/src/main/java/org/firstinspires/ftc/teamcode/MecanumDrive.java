@@ -39,6 +39,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.VoltageSensor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 import org.firstinspires.ftc.teamcode.messages.DriveCommandMessage;
@@ -111,7 +112,7 @@ public final class   MecanumDrive {
 
     public final VoltageSensor voltageSensor;
 
-    public final LazyImu lazyImu;
+//    public final LazyImu lazyImu;
 
 
     public final Localizer localizer;
@@ -253,10 +254,11 @@ public final class   MecanumDrive {
 
         voltageSensor = hardwareMap.voltageSensor.iterator().next();
 
-        Pose2d pula = new Pose2D(
-                odo.getPosX(),  
+        Pose2d pula = new Pose2d(
+                odo.getPosX(),
                 odo.getPosY(),
-                Math.toRadians(odo.getHeading())
+                odo.getHeading()
+
         );
 
         localizer = new DriveLocalizer(pula);
